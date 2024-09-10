@@ -179,3 +179,69 @@ for i in files:
 wb.save("infofile.xlsx")
 
 
+
+
+
+
+
+
+
+# Overall, this script is designed to analyze sound files in a specified folder, extract their metadata,--
+# and store that metadata in an Excel file for further analysis or processing.
+
+# openpyxl -- it is use to create an excel file
+
+
+# The os library in Python provides a way to interact with the operating system, allowing you to perform various tasks --
+# such as file and directory operations, process management, and environment variables manipulation
+
+
+
+# The wave library in Python provides functionality for reading and writing WAV (Waveform Audio File Format) files,--
+# which are commonly used for storing uncompressed audio data.
+
+
+# The shutil library in Python provides a high-level interface for file operations, allowing you to perform various--
+# file-related tasks such as copying, moving, and deleting files and directories. 
+
+
+
+
+# Overall, the soundfile library is an essential tool for working with sound files in Python, providing a comprehensive and--
+# efficient solution for reading, writing, and manipulating audio data across various formats.
+
+
+
+
+
+
+
+
+
+
+# --fn of the code 
+
+
+# This Python script, named "fileinfo.py," performs several tasks related to processing sound files and storing their metadata in an Excel file:
+
+# 1. It imports necessary libraries such as `soundfile`, `os`, `openpyxl`, `wave`, and `shutil`.
+
+# 2. It creates a new Excel workbook named "infofile.xlsx" using the `openpyxl` library.
+
+# 3. It loads the existing workbook named "infofile.xlsx" using `openpyxl`.
+
+# 4. It defines the path to the folder containing sound files (`positive`).
+
+# 5. It iterates through the files in the specified folder.
+
+# 6. For each file, it checks if the number of audio channels is 2 (stereo). If so, it removes the file from the folder.
+
+# 7. It calculates the duration of the audio file and moves files with a duration of less than 3 seconds to a separate folder named "positive_dustbin."
+
+# 8. It iterates through the metadata attributes of each sound file (e.g., filename, subtype, format, channels, format_info, frames, samplerate, mode, subtype_info, sections).
+
+# 9. For each attribute, it searches for the first empty cell in the corresponding column of the Excel sheet and writes the metadata value to that cell.
+
+# 10. After processing all sound files, it saves the updated Excel workbook.
+
+# Overall, this script is designed to analyze sound files in a specified folder, extract their metadata, and store that metadata in an Excel file for further analysis or processing.

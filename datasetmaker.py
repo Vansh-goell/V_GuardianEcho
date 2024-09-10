@@ -118,3 +118,48 @@ class scream():
         print("\nwhole process takes %s seconds" % (time.time()-start_time))
 
 scream()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# The provided code appears to be creating a dataset for a sound classification task. Here's a breakdown of what the code is doing:
+
+# 1. **Class Definition**: The code defines a class named `scream`.
+
+# 2. **Initializer**: The `__init__` method of the class is called when an instance of the class is created. Inside this method:
+#    - The `adder` method is called to populate the dataset.
+#    - The dataset is loaded from a CSV file named 'resources.csv'.
+#    - The dataset is shuffled to randomize the order of the data.
+#    - The shuffled dataset is saved to a new CSV file named 'newresources.csv'.
+#    - The input dimension for the model is written to a text file named 'input dimension for model.txt'.
+
+# 3. **Data Population (adder method)**: The `adder` method does the following:
+#    - It initializes variables for counting data points and starting index not to be shuffled.
+#    - It reads sound files from directories named 'positive', 'negative', and 'testing'.
+#    - For each sound file:
+#      - If the file is labeled as positive (belongs to the 'positive' directory), a label of 1 is assigned; otherwise, a label of 0 is assigned.
+#      - The sound file is read using `scipy.io.wavfile.read`.
+#      - The data is inserted into a Pandas Series, where the first element is the label and the remaining elements are the sound data.
+#      - The Pandas Series is appended to a list.
+#    - The list of Pandas Series is converted to a DataFrame.
+#    - Any columns containing null or NA values are dropped from the DataFrame.
+#    - The DataFrame is saved to a CSV file named 'resources.csv'.
+
+# 4. **Output**: The code prints information about the dataset, such as the number of rows and columns before and after shuffling.
+
+# Overall, the code appears to be reading sound files from specified directories, labeling them, and then saving the data to a CSV file for further processing, likely for training a machine learning model for sound classification.

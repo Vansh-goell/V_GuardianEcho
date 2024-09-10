@@ -41,3 +41,41 @@ def process_file(filename):
 
 #print("predicted value is"+str(rounded))
 #print("actual value was"+str(list(df.iloc[row_num_for_verification_of_model:,0])))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# This code appears to define a function named `process_file` which is responsible for processing a sound file and making a prediction using a pre-trained Keras model for sound classification.
+
+# Here's a breakdown of what the code is doing:
+
+# 1. **Loading the Model**: The code loads a pre-trained Keras model using `keras.models.load_model('.')`. The model is assumed to be stored in the current directory with the filename `'model.h5'`.
+
+# 2. **Reading the Sound File**: The function takes a filename as input. It uses `scipy.io.wavfile.read` to read the sound file.
+
+# 3. **Data Processing**:
+#    - It reads the length of the input expected by the model from a text file named `'input dimension for model.txt'`.
+#    - It truncates or pads the sound data to match the expected input length of the model.
+#    - The processed data is converted into a Pandas DataFrame.
+
+# 4. **Making Predictions**:
+#    - It extracts the features (sound data) from the DataFrame.
+#    - It uses the pre-trained model to make predictions on the sound data.
+#    - The predictions are rounded to obtain binary values (0 or 1).
+   
+# 5. **Returning Prediction**:
+#    - If the rounded prediction is `[1.0]`, it returns `True`, indicating that the sound is predicted to be positive.
+#    - If the rounded prediction is not `[1.0]`, it returns `False`, indicating that the sound is predicted to be negative.
+
+# Overall, this code defines a function to process a sound file, make predictions using a pre-trained model, and return a boolean value indicating whether the sound is classified as positive or negative based on the model's prediction.
